@@ -1,0 +1,296 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+[ext_resource path="res://Assets/ResumeButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ResumeButtonPressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ClickArea.png" type="Texture" id=5]
+[ext_resource path="res://Assets/ReplayBackground.png" type="Texture" id=6]
+[ext_resource path="res://Assets/ButtonPressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Button.png" type="Texture" id=8]
+[ext_resource path="res://Assets/SettingsButtonPressed.png" type="Texture" id=9]
+[ext_resource path="res://Assets/SettingsButton.png" type="Texture" id=10]
+[ext_resource path="res://Settings.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/ExitButton.png" type="Texture" id=12]
+[ext_resource path="res://Assets/ExitButtonPressed.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 1
+outline_color = Color( 0.87451, 0.443137, 0.14902, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 70, 26 )
+
+[node name="HUD" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_right = 4.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="RestartMenu" type="MarginContainer" parent="HUDLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 75
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="MarginContainer" parent="HUDLayer/RestartMenu"]
+margin_left = 100.0
+margin_top = 75.0
+margin_right = 500.0
+margin_bottom = 262.0
+
+[node name="Background" type="TextureRect" parent="HUDLayer/RestartMenu/CenterContainer"]
+margin_right = 400.0
+margin_bottom = 187.0
+texture = ExtResource( 6 )
+
+[node name="VBoxContainer" type="MarginContainer" parent="HUDLayer/RestartMenu/CenterContainer"]
+margin_right = 400.0
+margin_bottom = 187.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 8
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 60
+
+[node name="ScoreLabel" type="Label" parent="HUDLayer/RestartMenu/CenterContainer/VBoxContainer"]
+margin_left = 10.0
+margin_top = 43.0
+margin_right = 390.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 1 )
+text = "SCORE: XX"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUDLayer"]
+visible = false
+margin_left = 150.0
+margin_right = 450.0
+margin_bottom = 100.0
+color = Color( 1, 1, 1, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickSprite" type="Sprite" parent="HUDLayer"]
+visible = false
+position = Vector2( 300, 51 )
+texture = ExtResource( 5 )
+
+[node name="PlayAgain" type="Button" parent="HUDLayer"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -92.0
+margin_top = -167.0
+margin_right = 92.0
+margin_bottom = -98.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+keep_pressed_outside = true
+text = "          "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="Control" parent="HUDLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartMenu" type="MarginContainer" parent="HUDLayer/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 75
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="MarginContainer" parent="HUDLayer/PauseMenu/RestartMenu"]
+margin_left = 100.0
+margin_top = 75.0
+margin_right = 500.0
+margin_bottom = 262.0
+
+[node name="Background" type="TextureRect" parent="HUDLayer/PauseMenu/RestartMenu/CenterContainer"]
+margin_right = 400.0
+margin_bottom = 187.0
+texture = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="HUDLayer/PauseMenu"]
+visible = false
+margin_left = 150.0
+margin_right = 450.0
+margin_bottom = 100.0
+color = Color( 1, 1, 1, 0.196078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickSprite" type="Sprite" parent="HUDLayer/PauseMenu"]
+visible = false
+position = Vector2( 300, 51 )
+texture = ExtResource( 5 )
+
+[node name="Resume" type="Button" parent="HUDLayer/PauseMenu"]
+margin_left = 230.0
+margin_top = 85.0
+margin_right = 414.0
+margin_bottom = 154.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="HUDLayer/PauseMenu"]
+margin_left = 230.0
+margin_top = 142.5
+margin_right = 414.0
+margin_bottom = 211.5
+rect_scale = Vector2( 0.75, 0.75 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="HUDLayer/PauseMenu"]
+margin_left = 230.0
+margin_top = 200.0
+margin_right = 414.0
+margin_bottom = 269.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/disabled = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" parent="HUDLayer" instance=ExtResource( 11 )]
+visible = false
+
+[node name="ButtonTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="pressed" from="HUDLayer/PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="HUDLayer/PauseMenu/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="HUDLayer/PauseMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="HUDLayer/PauseMenu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="close_settings" from="HUDLayer/Settings" to="." method="_on_Settings_close_settings"]
